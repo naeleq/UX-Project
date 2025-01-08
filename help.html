@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>help</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 10px; 
+            border: 10px solid rgb(152, 133, 22);
+            height:200 vh; /* Full viewport height */
+            box-sizing: border-box; /* Include border in dimensions */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: flex-start; /* Align items at the top */
+            position: relative; /* Ensure child elements are relative */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .logo {
+            height: 100px;
+            width: auto; 
+            margin-top: 2px;
+        }
+
+        .divider {
+            position: absolute;
+            top: 117px;
+            left: 0;
+            width: 100%; /* Set width relative to the container */
+            height: 2px; /* Set divider height */
+            background-color:  rgb(152, 133, 22); /* Divider color */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0e0e0e;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #020203;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .faq {
+            margin-bottom: 15px;
+        }
+
+        .faq h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .faq p {
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo" class="logo">
+                </div>
+        
+                <div class="divider"></div>
+        </header>
+        <h1>Help Page</h1>
+        
+        <div class="section">
+            <h2>Membership Information</h2>
+            <div class="faq">
+                <h3>How can I sign up for a gym membership?</h3>
+                <p>You can sign up for a membership either online through our website or in-person at any of our locations. Simply choose a membership plan that suits your needs, fill in the required details, and complete the payment process. If you need assistance, our staff is happy to help!</p>
+            </div>
+            <div class="faq">
+                <h3>Can I cancel my membership at any time?</h3>
+                <p>Yes, you can cancel your membership by contacting our support team or visiting the front desk. Please note that cancellation terms may vary depending on your membership type, so be sure to review your agreement for specific details.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Class Schedules and Booking</h2>
+            <div class="faq">
+                <h3>Where can I find the class schedule?</h3>
+                <p>Our updated class schedules are available on our website and mobile app. You can filter classes by location, instructor, or time to find what works best for you.</p>
+            </div>
+            <div class="faq">
+                <h3>How do I book a spot in a class?</h3>
+                <p>You can reserve a spot in a class through our website or mobile app. Simply log in to your account, navigate to the class schedule, and click “Book Now” next to your desired class. Walk-ins are also welcome, but availability is not guaranteed.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Health and Safety Guidelines</h2>
+            <div class="faq">
+                <h3>What COVID-19 protocols are in place?</h3>
+                <p>We prioritize the health of our members and staff. Our gyms are regularly sanitized, and hand sanitizers are available throughout the facility. While masks are optional, we encourage members to follow local health guidelines. If you're feeling unwell, please stay home and take care.</p>
+            </div>
+            <div class="faq">
+                <h3>What should I do if I witness an injury or emergency at the gym?</h3>
+                <p>In case of an emergency, immediately inform a staff member or use the emergency contact button on our app. If necessary, call 911. All our staff members are trained in first aid and CPR.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Personal Training and Services</h2>
+            <div class="faq">
+                <h3>How can I book a session with a personal trainer?</h3>
+                <p>Booking a session is easy! You can visit the front desk, use our mobile app, or call us directly to schedule a personal training session. You’ll be able to choose a trainer based on your fitness goals and preferences.</p>
+            </div>
+            <div class="faq">
+                <h3>Do you offer nutritional advice?</h3>
+                <p>Yes, we offer nutritional guidance as part of our wellness programs. You can schedule a session with one of our nutrition experts to create a meal plan tailored to your fitness and health objectives.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Lost and Found</h2>
+            <div class="faq">
+                <h3>I lost an item at the gym. What should I do?</h3>
+                <p>If you’ve misplaced an item, please check with the front desk staff or contact our support team. We maintain a lost and found box at each location, and we’ll do our best to reunite you with your belongings.</p>
+            </div>
+            <div class="faq">
+                <h3>How long are found items kept?</h3>
+                <p>Found items are held for 30 days. After that, unclaimed items are donated or disposed of. Please reach out as soon as possible if you believe you’ve lost something.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS directly here for testing */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 0px; 
+            border: 10px solid rgb(152, 133, 22);
+            height: 300 vh; /* Full viewport height */
+            box-sizing: border-box; /* Include border in dimensions */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: flex-start; /* Align items at the top */
+            position: relative; /* Ensure child elements are relative */
+        }
+
+        .logo {
+            height: 100px;
+            width: auto; 
+            margin-top: 5px;
+        }
+
+        .divider {
+            position: fixed;
+            top: 130px;
+            left: 0;
+            width: 100%; /* Set width relative to the container */
+            height: 2px; /* Set divider height */
+            background-color:  rgb(152, 133, 22); /* Divider color */
+        }
+
+        .button-container {
+            Position: fixed;
+            top: 20px;
+            right: 25px;
+            display: flex; /* Place buttons side by side */
+            gap: 10px; /* Space between buttons */
+        }
+
+        /* Style for the clickable images */
+        .button {
+            height: 20px; /* Set button image height */
+            width: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Show pointer on hover */
+            border: none; /* Remove default border */
+        }
+
+        /* Add hover effect to buttons */
+        .button:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+         /* Flexbox layout for the photos */
+         .photo-row {
+            display: flex; /* Enable flexbox for layout */
+            align-items: center; /* Align photos vertically in the center */
+            gap: 0; /* Add spacing between photos */
+            margin-top: 17px; /* Add space from the top */
+            width: 100%;
+        }
+
+        /* Style for each photo */
+        .photo {
+            flex: 1; /* Ensure each photo takes equal space */
+            max-width: 100%; /* Limit each photo to 30% of the row width */
+            border: 2px solid  rgb(152, 133, 22); /* Gold border around each photo */
+            overflow: hidden; /* Ensure no content overflows the borders */
+        }
+
+        /* Style for images */
+        .photo img {
+            width: 100%; /* Make the image take full width of the parent */
+            height: auto; /* Maintain the image aspect ratio */
+            display: block; /* Remove unwanted gaps around images */
+        }
+
+        .thick-divider{
+            position:relative;
+            width:100%;
+            height: 10px;
+            background-color: rgb(152, 133, 22); /* Gold color */
+            margin-top: -5px;
+        }
+
+        .text-image-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure equal spacing */
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            gap: 0; /* Maintain space between text and image */
+            margin: 20px;
+            border: 2px solid  rgb(248, 248, 245); /* Gold border around each photo */
+            overflow: hidden; /* Ensure no content overflows the borders */
+            width: 90%; /* Make the image take full width of the parent */
+            height: auto; /* Maintain the image aspect ratio */
+        }
+
+        .text-content {
+            flex: 1;
+            min-width: 300px; /* Ensure text remains readable on smaller screens */
+            max-width: 600px; /* Limit width to avoid stretching */
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for clarity */
+        }
+
+
+        .text-content p {
+            font-size: 12px;
+            flex: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: center;
+            border: #fffdfd;
+            overflow: hidden;
+        }
+
+
+        .join-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            position: absolute;
+            left: 35%; 
+            bottom: 33%;  
+        }
+
+        .join-button:hover {
+            background-color: rgb(50, 50, 50); /* Slightly lighter on hover */
+        }
+
+        .image {
+            flex: 1;
+            min-width: 300px; /* Ensure image scales properly */
+            max-width: 600px; /* Limit width to match text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 300px;
+        }
+
+        .additional-text {
+            border: 2px solid  rgb(152, 133, 22); /* Gold border around each photo */
+            padding: 10px 20px;
+            font-size: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 22px;
+            text-align: center;
+        }
+
+        .bottom-left-section {
+            position: fixed; /* Fix the section to the bottom-left corner */
+            bottom: 40px; /* Spacing from the bottom */
+            left: 100px; /* Spacing from the left */
+            display: flex; /* Arrange content horizontally */
+            gap: 10px; /* Add space between images and text */
+        }
+
+        .bottom-left-images img {
+            width: 20px; /* Set the size of each icon */
+            height: 20px; /* Maintain proportional height */
+        }
+
+        .bottom-left-text {
+            position: fixed;
+            bottom: 8px;
+            font-size: 12px; /* Set a smaller font size for the text */
+            color: #000000; /* Use a neutral color for text */
+            font-family: Arial, Helvetica, sans-serif;
+            left:30px;
+        }
+        
+        .Links {
+            position: fixed;
+            bottom: 20px;
+            font-size: 12px; /* Set a smaller font size for the text */
+            color: #000000; /* Use a neutral color for text */
+            font-family: Arial, Helvetica, sans-serif;
+            right:30px;
+            word-spacing: 10px;
+        }
+
+    </style>
+    <title>Divider</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo" class="logo">
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="button-container">
+    
+                <!-- Login Button -->
+                <a href="login.html">
+                    <img src="Login.png" alt="Login" class="button">
+                </a>
+
+                <!-- Help Button -->
+                <a href="help.html">
+                    <img src="Help.png" alt="Help" class="button">
+                </a>
+            </div>
+        </header>
+
+        <div class="photo-row">
+            <div class="photo">
+                <img src="photo1.png" alt="Gym Photo 1">
+            </div>
+            <div class="photo">
+                <img src="photo2.png" alt="Gym Photo 2">
+            </div>
+            <div class="photo">
+                <img src="photo3.png" alt="Gym Photo 3">
+            </div>
+         </div>
+
+        <div class="thick-divider"></div>
+
+        <div class="text-image-section">
+            <div class="text-content">
+                <p>"One of the best gyms I have joined, the staff are so patient and kind and 
+                    committed to helping you reach all your fitness goals. I would recommend 
+                    to all who would listen." </p>
+                     
+                <p>-Jane, 30 </p>
+                </p>
+                <a href="join.html" class="join-button">Join Now</a>
+            </div>
+            <div class="image">
+                <img src="photo4.png" alt="Gym Action">
+            </div>
+        </div>
+
+        <div class="thick-divider"></div>
+
+        <div class="additional-text">
+            <p>Opening times </p>
+            <p>Monday              10:00AM - 8:00PM </p>
+            <p>Tuesday             10:00AM - 8:00PM</p>
+            <p>Wednesday           10:00AM - 8:00PM </p>
+            <p>Thurday             10:00AM - 8:00PM </p>
+            <p>Friday              10:00AM - 8:00PM </p>
+            <p>Saturday            8:00AM - 4:00PM</p>
+            <p>Sunday              10:00AM - 4:00PM</p>
+        </div>
+        <div class="bottom-left-section">
+            <div class="bottom-left-images">
+                <img src="Instagram.png" alt="Instagram Icon">
+                <img src="Facebook.png" alt="Facebook Icon">
+                <img src="Linkedin.png" alt="LinkedIn Icon">
+                <img src="Youtube.png" alt="YouTube Icon">
+            </div>
+            </div>
+        
+        <div class="bottom-left-text">
+            <p> @Follow us on social media for updates and fitness tips!</p>
+        </div>
+    </div>
+    <div>
+        <div class="Links">
+            <a href="yourpage.html">AboutUs</a>
+            <a href="yourpage.html">FAQ</a>
+            <a href="yourpage.html">TermsandConditions</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
